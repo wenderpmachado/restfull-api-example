@@ -15,19 +15,19 @@ npm install
 
 Depois, verifique se está configurado corretamente o acesso ao seu servidor de bando de dados, no arquivo `api/core/provider/NomeDoSeuProvider.ts`
 
-Para levantar o servidor node, execute o comando abaixo:
+Para levantar o servidor node.js, execute o comando abaixo:
 
 ```bash
 npm start
 ```
 
-Se a mensagem "O servidor Node.js + Express está funcionando na 3000" aparecer em seu terminal, sua api estará funcionando em: `http://localhost:3000/api/v1/nomeDaRota/`
+Se a mensagem `O servidor Node.js + Express está funcionando na 3000` aparecer em seu terminal, sua api estará funcionando em: `http://localhost:3000/api/v1/nomeDaRota/`
 
 Por padrão, a rota `http://localhost:3000/api/v1/usuario/` está configurada com o CRUD, que pode ser testado com os comandos de exemplo no arquivo `test/UsuarioControllerHTTP.txt`
 
 # Architecture #
 
-A arquitetura é baseada em MVC, Repository Pattern e alguns outros Project / Programming Patterns.
+A arquitetura é baseada em MVC, *Repository Pattern* e alguns outros Padrões de Projeto/Programação.
 
 Após a obtenção do projeto, você terá a seguinte árvore de diretório:
 
