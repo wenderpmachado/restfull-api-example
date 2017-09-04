@@ -1,0 +1,29 @@
+GET http://localhost:3000/api/v1/usuario/ HTTP/1.1
+
+POST http://localhost:3000/api/v1/usuario/ HTTP/1.1
+content-type: application/json
+
+{
+    "id": 1,
+    "nome": "Wender P Machado"
+}
+
+GET http://localhost:3000/api/v1/usuario/1 HTTP/1.1
+
+POST http://localhost:3000/api/v1/usuario/ HTTP/1.1
+content-type: application/json
+
+{
+    "id": 2,
+    "nome": "WinnerSan"
+}
+
+GET http://localhost:3000/api/v1/usuario/ HTTP/1.1
+
+DELETE http://localhost:3000/api/v1/usuario/1 HTTP/1.1
+
+GET http://localhost:3000/api/v1/usuario/ HTTP/1.1
+
+DELETE http://localhost:3000/api/v1/usuario/2 HTTP/1.1
+
+GET http://localhost:3000/api/v1/usuario/ HTTP/1.1
