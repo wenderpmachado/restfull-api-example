@@ -18,7 +18,7 @@ Depois, verifique se está configurado corretamente o acesso ao seu servidor de 
 Para levantar o servidor node, execute o comando abaixo:
 
 ```bash
-npm start;
+npm start
 ```
 
 Se a mensagem "O servidor Node.js + Express está funcionando na 3000" aparecer em seu terminal, sua api estará funcionando em: `http://localhost:3000/api/v1/nomeDaRota/`
