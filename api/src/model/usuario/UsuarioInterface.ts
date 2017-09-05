@@ -1,6 +1,6 @@
 import { ObjectID } from 'typeorm';
 
-export interface Usuario {
+export interface UsuarioInterface {
     id: number|ObjectID,
     nome: string
 }

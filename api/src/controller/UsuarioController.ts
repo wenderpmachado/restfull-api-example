@@ -1,12 +1,13 @@
 import { UsuarioService } from './../service/UsuarioService';
 import { JsonController, Get, Post, Param, Delete, Body } from 'routing-controllers';
 import { Service, Inject } from 'typedi';
-import { UsuarioRDB } from '../model/UsuarioRDB';
+import { UsuarioRDB } from '../model/usuario/UsuarioRDB';
 import { ControllerBase } from '../../core/Controller/ControllerBase';
+import { Usuario } from "../model/usuario/Usuario";
 
 @Service()
 @JsonController()
-export class UsuarioController extends ControllerBase<UsuarioRDB, UsuarioService> {
+export class UsuarioController extends ControllerBase<Usuario, UsuarioService> {
 
     @Inject() private servico: UsuarioService;
 
@@ -19,17 +20,17 @@ export class UsuarioController extends ControllerBase<UsuarioRDB, UsuarioService
     }
 
     @Get('/usuario/')
-    async buscarMultiplo(): Promise<UsuarioRDB[]> {
+    async buscarMultiplo(): Promise<Usuario[]> {
         return super.buscarMultiplo();
     }
 
     @Get('/usuario/:id')
-    async buscarUm(@Param('id') id: number): Promise<UsuarioRDB> {
+    async buscarUm(@Param('id') id: number): Promise<Usuario> {
         return super.buscarUm(id);
     }
 
     @Post('/usuario/')
-    async salvar(@Body() usuario: UsuarioRDB): Promise<UsuarioRDB> {
+    async salvar(@Body() usuario: Usuario): Promise<Usuario> {
         return super.salvar(usuario);
     }
 

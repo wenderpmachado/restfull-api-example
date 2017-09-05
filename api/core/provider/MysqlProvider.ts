@@ -32,7 +32,7 @@ export class MySQLProvider {
                 password: "root",
                 database: "test",
                 entities: [
-                    __dirname + '/../../src/model/*RDB.js'
+                    __dirname + '/../../src/model/**/*RDB.js'
                 ],
                 autoSchemaSync: true
             });

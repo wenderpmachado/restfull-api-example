@@ -1,10 +1,9 @@
 import { Repositorio } from './Repositorio';
-import { Repository, Connection } from 'typeorm';
+import { Repository, Connection, MongoRepository } from 'typeorm';
 
 export abstract class RepositorioBase<T> implements Repositorio<T> {
 
-    private conexao: Connection;
-    private colecao: Promise<Repository<T>>;
+    protected colecao: any;
 
     constructor() {
         try {
@@ -18,10 +17,12 @@ export abstract class RepositorioBase<T> implements Repositorio<T> {
      * Obtem uma instância do repositório associado ao T 
      * para realizar as operaçãos da coleção
      * 
-     * @returns {Promise<Repository<T>>} 
+     * @returns {Promise<any>} 
      * @memberof RepositorioBase
      */
-    abstract async obterRepositorio(): Promise<Repository<T>>;
+    abstract async obterRepositorio(): Promise<any>;
+
+    abstract async obterColecao(): Promise<any>;
 
     /**
      * Obtem uma conexão de um provedor de banco de dados
@@ -33,19 +34,19 @@ export abstract class RepositorioBase<T> implements Repositorio<T> {
     abstract async obterConexao(): Promise<Connection>;
 
     async buscarMultiplo(): Promise<T[]> {
-        return (await this.colecao).find();
+        return (await this.obterColecao()).find();
     }
 
     async buscarUm(id: number): Promise<T> {
-        return (await this.colecao).findOneById(id);
+        return (await this.obterColecao()).findOneById(id);
     }
 
     async salvar(T: T): Promise<T> {
-        return (await this.colecao).save(T);
+        return (await this.obterColecao()).save(T);
     }
 
     async excluirUm(id: number): Promise<void> {
-        return (await this.colecao).removeById(id);
+        return (await this.obterColecao()).removeById(id);
     }
 
 }

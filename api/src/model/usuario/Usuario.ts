@@ -4,11 +4,11 @@ export class Usuario {
         this.nome = nome;
     }
 
-    get getId() {
+    getId(): number {
         return this.id;
     }
     
-    get getNome() {
+    getNome(): string {
         return this.nome;
     }
 }

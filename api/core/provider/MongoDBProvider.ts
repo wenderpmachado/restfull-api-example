@@ -30,7 +30,7 @@ export class MongoDBProvider {
                 port: 27017,
                 database: "test",
                 entities: [
-                    __dirname + '/../../src/model/*MDB.js'
+                    __dirname + '/../../src/model/**/*MDB.js'
                 ],
                 autoSchemaSync: true
             });
