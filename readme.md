@@ -33,7 +33,7 @@ npm run start-test
 npm run test
 ```
 
-*Obs.: As variáveis de ambiente devem ser configuradas nos arquivos que estão em: `/api/core/config/env/` *
+*Obs.: As variáveis de ambiente devem ser configuradas nos arquivos que estão em: `/api/core/config/env/`*
 
 # Architecture #
 
