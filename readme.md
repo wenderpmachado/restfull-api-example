@@ -21,7 +21,7 @@ Para levantar o servidor node.js, execute o comando abaixo:
 npm start
 ```
 
-Se a mensagem `O servidor Node.js + Express está funcionando na port XXXX` aparecer em seu terminal, sua api estará funcionando em: `http://localhost:XXXX/api/v1/nomeDaRota/`
+Se a mensagem `O servidor Node.js + Express está funcionando na port 3000` aparecer em seu terminal, sua api estará funcionando em: `http://localhost:3000/api/v1/nomeDaRota/`
 
 Por padrão, a rota `http://localhost:3000/api/v1/usuario/` está configurada com o CRUD, que pode ser testado através dos seguintes comandos (cada um em um terminal diferente):
 
@@ -32,6 +32,8 @@ npm run start-test
 ```bash
 npm run test
 ```
+
+*Obs.: As variáveis de ambiente devem ser configuradas nos arquivos que estão em: `/api/core/config/env/` *
 
 # Architecture #
 
