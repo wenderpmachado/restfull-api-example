@@ -1,8 +1,10 @@
+import "reflect-metadata";
 import { createExpressServer } from "routing-controllers";
 import * as path from 'path';
 import * as express from 'express';
 import * as logger from 'morgan';
 import * as bodyParser from 'body-parser';
+import * as cors from 'cors';
 
 export class ExpressConfig {
     private static express: express.Application;
@@ -50,5 +52,6 @@ export class ExpressConfig {
         this.express.use(logger('dev'));
         this.express.use(bodyParser.json());
         this.express.use(bodyParser.urlencoded({ extended: false }));
+        this.express.use(cors);
     }
 }

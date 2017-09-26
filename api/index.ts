@@ -1,3 +1,4 @@
+import { DotEnv } from './core/config/DotEnvConfig';
 import { Server } from './core/config/Server';
 import { ExpressConfig } from './core/config/ExpressConfig';
 import 'reflect-metadata';
@@ -8,6 +9,10 @@ import * as bodyParser from 'body-parser';
 import { MongoDBProvider } from './core/provider/MongoDBProvider';
 import { MySQLProvider } from './core/Provider/MysqlProvider';
 
+// configura as variáveis de ambiente
+DotEnv.config(process.env.NODE_ENV);
+
+// obtem uma conexão com o banco de dados escolhido
 MySQLProvider.obterConexao().then(async connection => {
 // MongoDBProvider.obterConexao().then(async connection => {
 

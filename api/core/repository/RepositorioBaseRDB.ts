@@ -49,8 +49,8 @@ export abstract class RepositorioBaseRDB<T> extends RepositorioBase<T> {
         return (await this.colecao).findOneById(id);
     }
 
-    async salvar(T: T): Promise<T> {
-        return (await this.colecao).save(T);
+    async salvar(t: T): Promise<T> {
+        return (await this.colecao).save(t);
     }
 
     async excluirUm(id: number): Promise<void> {

@@ -53,7 +53,7 @@ export class Server {
      * @memberof Server
      */
     obterPorta(): string|number|boolean {
-        return this.normalizarPorta(process.env.PORT || this.defaultPort);
+        return this.normalizarPorta(process.env.PORT || process.env.SERVER_PORT || this.defaultPort);
     }
 
     /**
