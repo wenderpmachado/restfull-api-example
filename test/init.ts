@@ -1,8 +1,8 @@
 import { DotEnv } from './../api/core/config/DotEnvConfig';
 import { ExpressConfig } from './../api/core/config/ExpressConfig';
 import { Server } from './../api/core/config/Server';
-import { suite, test } from "mocha-typescript";
-import { Service, Inject } from "typedi";
+import { suite, test } from 'mocha-typescript';
+import { Service, Inject } from 'typedi';
 import httpStatus = require('http-status');
 import chaiHttp = require('chai-http');
 import * as mocha from 'mocha';
@@ -17,12 +17,13 @@ const server: Server = new Server(app);
 
 chai.use(chaiHttp);
 const expect: Chai.ExpectStatic = chai.expect;
-const request = chai.request("http://localhost:"+ server.obterPorta() +"/api/v1")
+const request = chai.request(app);
+// const request = chai.request("http://localhost:"+ server.obterPorta() +"/api/v1");
 
 export {
-    app, 
+    app,
     request,
-    expect, 
+    expect,
     httpStatus,
     suite,
     test,

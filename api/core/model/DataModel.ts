@@ -1,3 +1,3 @@
 export interface DataModel<T> {
-    toModel(): T;
+  toModel(): T;
 }

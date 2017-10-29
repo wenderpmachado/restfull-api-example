@@ -16,13 +16,13 @@ DotEnv.config(process.env.NODE_ENV);
 MySQLProvider.obterConexao().then(async connection => {
 // MongoDBProvider.obterConexao().then(async connection => {
 
-    // cria a variavel do express
-    const app = ExpressConfig.obterInstancia();
+  // cria a variavel do express
+  const app = ExpressConfig.obterInstancia();
 
-    // attribui express ao servidor
-    const server = new Server(app);
+  // attribui express ao servidor
+  const server = new Server(app);
 
-    // roda o servidor
-    server.start();
+  // roda o servidor
+  server.start();
 
 }).catch(error => console.log('TypeORM connection error: ', error));
